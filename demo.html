@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>SlimNotifierJs - Demo</title>
+    <style>
+        html, body, .flex-container { width: 100%; height: 100%; margin: 0; }
+        .separator { width: 300px; margin: 4px 0 9px 40px; border-bottom: 1px solid black; }
+        .flex-container {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            padding: 10px 0;
+        }
+        button {
+            cursor: pointer;
+            text-align: center;
+            width: 300px;
+            font-weight: bold;
+            font-size: 24px;
+            padding: 10px;
+            margin: 0 0 5px 40px;
+        }
+    </style>
+    <script src="slim_notifier.js"></script>
+    <script>
+        SlimNotifierJs.addType('envelope', {
+            outerBorder: 'none',
+            innerBorder: 'none',
+            textBG: '#8565c4',
+            iconBG: '#8565c4',
+            color: '#eeeeee',
+            titleFontSize: '1.4em',
+            textFontSize: '1em',
+            icon: 'envelope.png'
+        });
+    </script>
+</HEAD>
+<BODY>
+    <div class="flex-container">
+        <button onclick="SlimNotifierJs.notification('simple', 'Closable', 'Close automatically after 3s or by clicking on \'x\'.', 3000);">Simple 3s closable</button>
+        <button onclick="SlimNotifierJs.notification('simple', 'Closable', 'Close automatically after 3s.', 3000, false);">Simple 3s</button>
+        <button onclick="SlimNotifierJs.notification('simple', 'Closable', 'Persistent, close it by clicking on \'x\'.', null);">Simple persistent closable</button>
+        <button onclick="SlimNotifierJs.notification('simple', 'Persistent', 'Is not closable.', null, false);">Simple persistent</button>
+        <div class="separator"></div>
+        <button onclick="SlimNotifierJs.notification('info', 'Information', 'Close automatically after 3s or by clicking on \'x\'.', 3000);">Info 3s closable</button>
+        <button onclick="SlimNotifierJs.notification('info', 'Information', 'Close automatically after 3s.', 3000, false);">Info 3s</button>
+        <button onclick="SlimNotifierJs.notification('info', 'Information', 'Persistent, close it by clicking on \'x\'.', null);">Info persistent closable</button>
+        <button onclick="SlimNotifierJs.notification('info', 'Information', 'Is not closable.', null, false);">Info persistent</button>
+        <div class="separator"></div>
+        <button onclick="SlimNotifierJs.notification('success', 'Successfully', 'Message shown.', 3000);">Success 3s closable</button>
+        <button onclick="SlimNotifierJs.notification('success', 'Successfully', 'Message shown.', 3000, false);">Success 3s</button>
+        <button onclick="SlimNotifierJs.notification('success', 'Successfully', 'Message shown.', null);">Success persistent closable</button>
+        <button onclick="SlimNotifierJs.notification('success', 'Successfully', 'Message shown.', null, false);">Success persistent</button>
+        <div class="separator"></div>
+        <button onclick="SlimNotifierJs.notification('warning', 'Warning', 'This message can be too awesome!', 3000);">Warning 3s closable</button>
+        <button onclick="SlimNotifierJs.notification('warning', 'Warning', 'This message can be too awesome!', 3000, false);">Warning 3s</button>
+        <button onclick="SlimNotifierJs.notification('warning', 'Warning', 'This message can be too awesome!', null);">Warning persistent closable</button>
+        <button onclick="SlimNotifierJs.notification('warning', 'Warning', 'This message can be too awesome!', null, false);">Warning persistent</button>
+        <div class="separator"></div>
+        <button onclick="SlimNotifierJs.notification('error', 'Error', 'jQuery is not used.', 3000);">Error 3s closable</button>
+        <button onclick="SlimNotifierJs.notification('error', 'Error', 'jQuery is not used.', 3000, false);">Error 3s</button>
+        <button onclick="SlimNotifierJs.notification('error', 'Error', 'jQuery is not used.', null);">Error persistent closable</button>
+        <button onclick="SlimNotifierJs.notification('error', 'Error', 'jQuery is not used.', null, false);">Error persistent</button>
+        <div class="separator"></div>
+        <button onclick="SlimNotifierJs.notification('envelope', 'Messagee', 'You received a custom message.', 3000);">Custom 3s closable</button>
+        <button onclick="SlimNotifierJs.notification('envelope', 'Messagee', 'You received a custom message.', 3000, false);">Custom 3s</button>
+        <button onclick="SlimNotifierJs.notification('envelope', 'Messagee', 'You received a custom message.', null);">Custom persistent closable</button>
+        <button onclick="SlimNotifierJs.notification('envelope', 'Messagee', 'You received a custom message.', null, false);">Custom persistent</button>
+    </div>
+</BODY>
+</HTML>
